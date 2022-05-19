@@ -1,0 +1,230 @@
+{
+  "contractName": "IBaseWeightedPool",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getNormalizedWeights",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getNormalizedWeights\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/IBaseWeightedPool.sol\":\"IBaseWeightedPool\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/IBaseWeightedPool.sol\":{\"keccak256\":\"0x4168b00bd633d9bbc5d388354d5e7a5e9ccdc8d3168703673727eb7c6d6bbe35\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://18e5a9050228aed4703c1673817291f3355ba13264a9ad4eecbf1f4cf7652a92\",\"dweb:/ipfs/Qmdjb7WDG5dW3ptHwfEFHz5Yf1U2YVAu9DXDetX832NSXi\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ninterface IBaseWeightedPool {\r\n    enum JoinKind {\r\n        INIT,\r\n        EXACT_TOKENS_IN_FOR_BPT_OUT,\r\n        TOKEN_IN_FOR_EXACT_BPT_OUT,\r\n        ALL_TOKENS_IN_FOR_EXACT_BPT_OUT\r\n    }\r\n    enum ExitKind {\r\n        EXACT_BPT_IN_FOR_ONE_TOKEN_OUT,\r\n        EXACT_BPT_IN_FOR_TOKENS_OUT,\r\n        BPT_IN_FOR_EXACT_TOKENS_OUT,\r\n        MANAGEMENT_FEE_TOKENS_OUT // for InvestmentPool\r\n    }\r\n\r\n    function getNormalizedWeights() external view returns (uint256[] memory);\r\n}",
+  "sourcePath": "E:\\2.Dev\\2\\fantohm\\2.Progress\\3.DefiYieldFarming\\marketplace\\src\\contracts\\interfaces\\IBaseWeightedPool.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/interfaces/IBaseWeightedPool.sol",
+    "exportedSymbols": {
+      "IBaseWeightedPool": [
+        5739
+      ]
+    },
+    "id": 5740,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5722,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:28"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBaseWeightedPool",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 5739,
+        "linearizedBaseContracts": [
+          5739
+        ],
+        "name": "IBaseWeightedPool",
+        "nameLocation": "72:17:28",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IBaseWeightedPool.JoinKind",
+            "id": 5727,
+            "members": [
+              {
+                "id": 5723,
+                "name": "INIT",
+                "nameLocation": "122:4:28",
+                "nodeType": "EnumValue",
+                "src": "122:4:28"
+              },
+              {
+                "id": 5724,
+                "name": "EXACT_TOKENS_IN_FOR_BPT_OUT",
+                "nameLocation": "137:27:28",
+                "nodeType": "EnumValue",
+                "src": "137:27:28"
+              },
+              {
+                "id": 5725,
+                "name": "TOKEN_IN_FOR_EXACT_BPT_OUT",
+                "nameLocation": "175:26:28",
+                "nodeType": "EnumValue",
+                "src": "175:26:28"
+              },
+              {
+                "id": 5726,
+                "name": "ALL_TOKENS_IN_FOR_EXACT_BPT_OUT",
+                "nameLocation": "212:31:28",
+                "nodeType": "EnumValue",
+                "src": "212:31:28"
+              }
+            ],
+            "name": "JoinKind",
+            "nameLocation": "102:8:28",
+            "nodeType": "EnumDefinition",
+            "src": "97:153:28"
+          },
+          {
+            "canonicalName": "IBaseWeightedPool.ExitKind",
+            "id": 5732,
+            "members": [
+              {
+                "id": 5728,
+                "name": "EXACT_BPT_IN_FOR_ONE_TOKEN_OUT",
+                "nameLocation": "281:30:28",
+                "nodeType": "EnumValue",
+                "src": "281:30:28"
+              },
+              {
+                "id": 5729,
+                "name": "EXACT_BPT_IN_FOR_TOKENS_OUT",
+                "nameLocation": "322:27:28",
+                "nodeType": "EnumValue",
+                "src": "322:27:28"
+              },
+              {
+                "id": 5730,
+                "name": "BPT_IN_FOR_EXACT_TOKENS_OUT",
+                "nameLocation": "360:27:28",
+                "nodeType": "EnumValue",
+                "src": "360:27:28"
+              },
+              {
+                "id": 5731,
+                "name": "MANAGEMENT_FEE_TOKENS_OUT",
+                "nameLocation": "398:25:28",
+                "nodeType": "EnumValue",
+                "src": "398:25:28"
+              }
+            ],
+            "name": "ExitKind",
+            "nameLocation": "261:8:28",
+            "nodeType": "EnumDefinition",
+            "src": "256:196:28"
+          },
+          {
+            "functionSelector": "f89f27ed",
+            "id": 5738,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNormalizedWeights",
+            "nameLocation": "469:20:28",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5733,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "489:2:28"
+            },
+            "returnParameters": {
+              "id": 5737,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5736,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5738,
+                  "src": "515:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 5734,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "515:7:28",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 5735,
+                    "nodeType": "ArrayTypeName",
+                    "src": "515:9:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "514:18:28"
+            },
+            "scope": 5739,
+            "src": "460:73:28",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5740,
+        "src": "62:474:28",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:501:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-19T10:45:51.000Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

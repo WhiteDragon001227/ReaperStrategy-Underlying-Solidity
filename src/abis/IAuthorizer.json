@@ -1,0 +1,255 @@
+{
+  "contractName": "IAuthorizer",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "actionId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "where",
+          "type": "address"
+        }
+      ],
+      "name": "canPerform",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"actionId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"where\",\"type\":\"address\"}],\"name\":\"canPerform\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"canPerform(bytes32,address,address)\":{\"details\":\"Returns true if `account` can perform the action described by `actionId` in the contract `where`.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/IAuthorizer.sol\":\"IAuthorizer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/IAuthorizer.sol\":{\"keccak256\":\"0x18b2ef1795724d4c75e95680715f9ed92157c8d3c9f8ecf400cb4746d0d17371\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://681452ced4351dd052198513e5692b1d2e9037721a438d8acebf08fd2d294969\",\"dweb:/ipfs/QmPZXEbYhP2QqQ2yy3T5q8f8Lqn1FbwKZ7BnqqVvTma5wj\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ninterface IAuthorizer {\r\n    /**\r\n     * @dev Returns true if `account` can perform the action described by `actionId` in the contract `where`.\r\n     */\r\n    function canPerform(\r\n        bytes32 actionId,\r\n        address account,\r\n        address where\r\n    ) external view returns (bool);\r\n}",
+  "sourcePath": "E:\\2.Dev\\2\\fantohm\\2.Progress\\3.DefiYieldFarming\\marketplace\\src\\contracts\\interfaces\\IAuthorizer.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/interfaces/IAuthorizer.sol",
+    "exportedSymbols": {
+      "IAuthorizer": [
+        5659
+      ]
+    },
+    "id": 5660,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5646,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:26"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IAuthorizer",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 5659,
+        "linearizedBaseContracts": [
+          5659
+        ],
+        "name": "IAuthorizer",
+        "nameLocation": "72:11:26",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 5647,
+              "nodeType": "StructuredDocumentation",
+              "src": "91:123:26",
+              "text": " @dev Returns true if `account` can perform the action described by `actionId` in the contract `where`."
+            },
+            "functionSelector": "9be2a884",
+            "id": 5658,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canPerform",
+            "nameLocation": "229:10:26",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5654,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5649,
+                  "mutability": "mutable",
+                  "name": "actionId",
+                  "nameLocation": "258:8:26",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5658,
+                  "src": "250:16:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5648,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5651,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "285:7:26",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5658,
+                  "src": "277:15:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5650,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "277:7:26",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5653,
+                  "mutability": "mutable",
+                  "name": "where",
+                  "nameLocation": "311:5:26",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5658,
+                  "src": "303:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5652,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:7:26",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "239:84:26"
+            },
+            "returnParameters": {
+              "id": 5657,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5656,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5658,
+                  "src": "347:4:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5655,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "347:4:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "346:6:26"
+            },
+            "scope": 5659,
+            "src": "220:133:26",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5660,
+        "src": "62:294:26",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:321:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-19T10:45:50.998Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "canPerform(bytes32,address,address)": {
+        "details": "Returns true if `account` can perform the action described by `actionId` in the contract `where`."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "contractName": "IStrategy",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "harvest",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "estimateHarvest",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "profit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "callFeeToUser",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "retireStrat",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "panic",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"estimateHarvest\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"profit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"callFeeToUser\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"harvest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"panic\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"retireStrat\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/IStrategy.sol\":\"IStrategy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/IStrategy.sol\":{\"keccak256\":\"0x4c8631f558bfa22a5766d79a5a831c292ed4c4d24b0b4e139b5479c52d45c645\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7a3244d74ced44606c22fca29196ea5d66a8614623c32c101089d34dd5b30a32\",\"dweb:/ipfs/QmfQtu5CWm1KNNen38hsEzX2DMVCftB4z9rvzfiVkD4BPA\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ninterface IStrategy {\r\n    //deposits all funds into the farm\r\n    function deposit() external;\r\n\r\n    //vault only - withdraws funds from the strategy\r\n    function withdraw(uint256 _amount) external;\r\n\r\n    //claims farmed tokens, distributes fees, and sells tokens to re-add to the LP & farm\r\n    function harvest() external;\r\n\r\n    //returns the balance of all tokens managed by the strategy\r\n    function balanceOf() external view returns (uint256);\r\n\r\n    //returns the approx amount of profit from harvesting plus fee returned to harvest caller.\r\n    function estimateHarvest() external view returns (uint256 profit, uint256 callFeeToUser);\r\n\r\n    //withdraws all tokens and sends them back to the vault\r\n    function retireStrat() external;\r\n\r\n    //pauses deposits, resets allowances, and withdraws all funds from farm\r\n    function panic() external;\r\n\r\n    //pauses deposits and resets allowances\r\n    function pause() external;\r\n\r\n    //unpauses deposits and maxes out allowances again\r\n    function unpause() external;\r\n}",
+  "sourcePath": "E:\\2.Dev\\2\\fantohm\\2.Progress\\3.DefiYieldFarming\\marketplace\\src\\contracts\\interfaces\\IStrategy.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/interfaces/IStrategy.sol",
+    "exportedSymbols": {
+      "IStrategy": [
+        6572
+      ]
+    },
+    "id": 6573,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6536,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:34"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IStrategy",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 6572,
+        "linearizedBaseContracts": [
+          6572
+        ],
+        "name": "IStrategy",
+        "nameLocation": "72:9:34",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "d0e30db0",
+            "id": 6539,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nameLocation": "138:7:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6537,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "145:2:34"
+            },
+            "returnParameters": {
+              "id": 6538,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "156:0:34"
+            },
+            "scope": 6572,
+            "src": "129:28:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2e1a7d4d",
+            "id": 6544,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "228:8:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6542,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6541,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "245:7:34",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6544,
+                  "src": "237:15:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6540,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "237:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "236:17:34"
+            },
+            "returnParameters": {
+              "id": 6543,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "262:0:34"
+            },
+            "scope": 6572,
+            "src": "219:44:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4641257d",
+            "id": 6547,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "harvest",
+            "nameLocation": "371:7:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6545,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "378:2:34"
+            },
+            "returnParameters": {
+              "id": 6546,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "389:0:34"
+            },
+            "scope": 6572,
+            "src": "362:28:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "722713f7",
+            "id": 6552,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOf",
+            "nameLocation": "472:9:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6548,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "481:2:34"
+            },
+            "returnParameters": {
+              "id": 6551,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6550,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6552,
+                  "src": "507:7:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6549,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:9:34"
+            },
+            "scope": 6572,
+            "src": "463:53:34",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "b29d404b",
+            "id": 6559,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "estimateHarvest",
+            "nameLocation": "629:15:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "644:2:34"
+            },
+            "returnParameters": {
+              "id": 6558,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6555,
+                  "mutability": "mutable",
+                  "name": "profit",
+                  "nameLocation": "678:6:34",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6559,
+                  "src": "670:14:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6554,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "670:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6557,
+                  "mutability": "mutable",
+                  "name": "callFeeToUser",
+                  "nameLocation": "694:13:34",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6559,
+                  "src": "686:21:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6556,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "686:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "669:39:34"
+            },
+            "scope": 6572,
+            "src": "620:89:34",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "fb617787",
+            "id": 6562,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "retireStrat",
+            "nameLocation": "787:11:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6560,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "798:2:34"
+            },
+            "returnParameters": {
+              "id": 6561,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "809:0:34"
+            },
+            "scope": 6572,
+            "src": "778:32:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4700d305",
+            "id": 6565,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "panic",
+            "nameLocation": "904:5:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6563,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "909:2:34"
+            },
+            "returnParameters": {
+              "id": 6564,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "920:0:34"
+            },
+            "scope": 6572,
+            "src": "895:26:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "8456cb59",
+            "id": 6568,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pause",
+            "nameLocation": "983:5:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6566,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "988:2:34"
+            },
+            "returnParameters": {
+              "id": 6567,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "999:0:34"
+            },
+            "scope": 6572,
+            "src": "974:26:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "3f4ba83a",
+            "id": 6571,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unpause",
+            "nameLocation": "1073:7:34",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6569,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1080:2:34"
+            },
+            "returnParameters": {
+              "id": 6570,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1091:0:34"
+            },
+            "scope": 6572,
+            "src": "1064:28:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6573,
+        "src": "62:1033:34",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:1060:34"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-19T10:45:51.012Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

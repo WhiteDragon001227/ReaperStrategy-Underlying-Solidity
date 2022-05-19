@@ -1,0 +1,286 @@
+{
+  "contractName": "ITemporarilyPausable",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "paused",
+          "type": "bool"
+        }
+      ],
+      "name": "PausedStateChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getPausedState",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "paused",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pauseWindowEndTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bufferPeriodEndTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"paused\",\"type\":\"bool\"}],\"name\":\"PausedStateChanged\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getPausedState\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"paused\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"pauseWindowEndTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bufferPeriodEndTime\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"PausedStateChanged(bool)\":{\"details\":\"Emitted every time the pause state changes by `_setPaused`.\"}},\"kind\":\"dev\",\"methods\":{\"getPausedState()\":{\"details\":\"Returns the current paused state.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/interfaces/ITemporarilyPausable.sol\":\"ITemporarilyPausable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/interfaces/ITemporarilyPausable.sol\":{\"keccak256\":\"0xe5858546d5c14ed9233b6aa65bd6f4ef59a5ef1af8bf240a217d868b8efa50aa\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://973b5c7216403b766b02f7cc5828f2b9c606479793a749c6aecc2838d7224133\",\"dweb:/ipfs/Qmac8ULyaAEbixoSz31HNVSUVZs45zraeu3h43H4p37Jm4\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ninterface ITemporarilyPausable {\r\n    /**\r\n     * @dev Emitted every time the pause state changes by `_setPaused`.\r\n     */\r\n    event PausedStateChanged(bool paused);\r\n\r\n    /**\r\n     * @dev Returns the current paused state.\r\n     */\r\n    function getPausedState()\r\n        external\r\n        view\r\n        returns (\r\n            bool paused,\r\n            uint256 pauseWindowEndTime,\r\n            uint256 bufferPeriodEndTime\r\n        );\r\n}",
+  "sourcePath": "E:\\2.Dev\\2\\fantohm\\2.Progress\\3.DefiYieldFarming\\marketplace\\src\\contracts\\interfaces\\ITemporarilyPausable.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/interfaces/ITemporarilyPausable.sol",
+    "exportedSymbols": {
+      "ITemporarilyPausable": [
+        6590
+      ]
+    },
+    "id": 6591,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6574,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:35"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITemporarilyPausable",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 6590,
+        "linearizedBaseContracts": [
+          6590
+        ],
+        "name": "ITemporarilyPausable",
+        "nameLocation": "72:20:35",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6575,
+              "nodeType": "StructuredDocumentation",
+              "src": "100:85:35",
+              "text": " @dev Emitted every time the pause state changes by `_setPaused`."
+            },
+            "id": 6579,
+            "name": "PausedStateChanged",
+            "nameLocation": "197:18:35",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6577,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "paused",
+                  "nameLocation": "221:6:35",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6579,
+                  "src": "216:11:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6576,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "216:4:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "215:13:35"
+            },
+            "src": "191:38:35"
+          },
+          {
+            "documentation": {
+              "id": 6580,
+              "nodeType": "StructuredDocumentation",
+              "src": "237:59:35",
+              "text": " @dev Returns the current paused state."
+            },
+            "functionSelector": "1c0de051",
+            "id": 6589,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPausedState",
+            "nameLocation": "311:14:35",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6581,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "325:2:35"
+            },
+            "returnParameters": {
+              "id": 6588,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6583,
+                  "mutability": "mutable",
+                  "name": "paused",
+                  "nameLocation": "397:6:35",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "392:11:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6582,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "392:4:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6585,
+                  "mutability": "mutable",
+                  "name": "pauseWindowEndTime",
+                  "nameLocation": "426:18:35",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "418:26:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6584,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "418:7:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6587,
+                  "mutability": "mutable",
+                  "name": "bufferPeriodEndTime",
+                  "nameLocation": "467:19:35",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6589,
+                  "src": "459:27:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6586,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "459:7:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "377:120:35"
+            },
+            "scope": 6590,
+            "src": "302:196:35",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6591,
+        "src": "62:439:35",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:466:35"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-19T10:45:51.012Z",
+  "devdoc": {
+    "events": {
+      "PausedStateChanged(bool)": {
+        "details": "Emitted every time the pause state changes by `_setPaused`."
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "getPausedState()": {
+        "details": "Returns the current paused state."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
